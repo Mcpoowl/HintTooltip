@@ -74,7 +74,7 @@
         <property key="tooltipAnimation" type="enumeration" required="true" defaultValue="hint__normal">
             <caption>Tooltip animation</caption>
             <category>Appearance</category>
-            <description>Animation of the tooltip. Normal is a </description>
+            <description>Animation of the tooltip. Normal is a slide in.</description>
             <enumerationValues>
                 <enumerationValue key="hint__no_animate">None</enumerationValue>
                 <enumerationValue key="hint__normal">Normal</enumerationValue>
