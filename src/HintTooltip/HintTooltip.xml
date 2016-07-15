@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="HintTooltip.widget.HintTooltip" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>HintTooltip</name>
+    <description>Show tooltips with some flair!</description>
+
+    <icon>
+        iVBORw0KGgoAAAANSUhEUgAAANEAAAB6CAYAAAAh4bbCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA0JJREFUeNrs21FkVXEcwPG7mhERMSJyH6KMxSylROlpkfXSU5HRw8geIlJ6iEQPEdNDRHoYvZQexthLD72URsQUY3RFjDF6GjG3399O3LK27u3c23bO58NPi917+Z/7de7537Ouer1eAVrXJSIQEYgIRAQiAkQEIoKCRlStVq0SpVWr1Tb8ne6cXmtfzFDMYDY9Mf0OAZvIYsyXmIWY9zEzMdMxK//7TDQScznmhGPEFrQU8yxmPGa+1TPRthZf/HTMx5inAmIL2x0zlr2XH8bsbOVJWonoRsyrmD7HgILoyWJ6F7O/3RHdjblnzSmodGJ4E7O3XRENx9yyzhRcb8zLmO3tiMgZiLI4EnM+74hOugaiZMbyjmjQmlIy/XlH1GNNKZld7bgmAkQEIgIRgYgAEYGIQEQgIkBEICIQEYgIEBGICEQEIgIRASICEYGIQESAiEBEICIQESAiEBGICEQEiAhEBCICEQEiAhGBiEBEgIhARCAiEBEgIhARiAhEBIgIRAQiAhEBIgIRgYhARICIQEQgIhARiAgQEYgIRAQiAkQEIgIRgYgAEYGIQEQgIqBSWck7okVrSsl8zTuiqZjv1pUSmco7ooWYCetKiT7K3W/HNdHNmM/WlxK43sx7vZmI0nXRueysBEU1HvOgmQc0uzs3GzMQ89ZaUzDLMaMxV5t9YCtb3OlMdDzmoo93FMSTmIMxj1t5cFe9Xl/3F6rV6kbPMRRzIfu31/Fgi5iJeVFZ3TD74yVKrVbrSESNDsT0NcSUft7heFWGY/Z06LXmYl5b8l/Mx3xruCT51PD/df2PiFjb3pjnMcfa/DqPs8/0y5Y8H38Tkdt+OiN9+30q5lGbnv/nzumogDpPRJ2T7vi4EnMp5zf6dMyhmElLLKKySBeyaXfzX3c2U4jXYs5UfHcnohL6EHM4O4u0Il0cH600+aUgIiqapewscqfJx41nAc1aQhGx6nbM2crGW64LWXR230TEGtJt9wPZx7y1TGabB9OWSkT8WdpoSBsOE79tHqQdvbR97Q8jN6luS7CppGjSFni6wXck+3nOsmxu7liAdeRy2w8gIhARiAhEBIgIRAQiAhEBIgIRgYigYH4IMACWZ78JNNAqjAAAAABJRU5ErkJggg==
+    </icon>
+
+<properties>
+        <property key="tooltipClass" type="string" required="true">
+            <caption>Tooltip class</caption>
+            <category>Appearance</category>
+            <description>The class of the element to show the tooltip on</description>
+        </property>
+        <property key="tooltipMessage" type="translatableString" required="false" defaultValue="">
+            <caption>Tooltip</caption>
+            <category>Data</category>
+            <description>The message to show in the tooltip. Used if no DataSource is selected</description>
+        </property>
+        <property key="tooltipDataSource" type="microflow" required="false" defaultValue="">
+            <caption>Tooltip source</caption>
+            <category>Data</category>
+            <description>Microflow which will return a message as String</description>
+            <returnType type="String" />
+        </property>
+        <property key="tooltipLocation" type="enumeration" required="true" defaultValue="hint__bottom">
+            <caption>Tooltip location</caption>
+            <category>Appearance</category>
+            <description>The location of the tooltip</description>
+            <enumerationValues>
+                <enumerationValue key="hint__bottom">Bottom</enumerationValue>
+                <enumerationValue key="hint__bottom_left">Bottom-left</enumerationValue>
+                <enumerationValue key="hint__left">Left</enumerationValue>
+                <enumerationValue key="hint__top_left">Top-left</enumerationValue>
+                <enumerationValue key="hint__top">Top</enumerationValue>
+                <enumerationValue key="hint__top_right">Top-right</enumerationValue>
+                <enumerationValue key="hint__right">Right</enumerationValue>
+                <enumerationValue key="hint__bottom_right">Bottom-right</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="tooltipModifier" type="enumeration" required="true" defaultValue="none">
+            <caption>Tooltip color</caption>
+            <category>Appearance</category>
+            <description>Color of the tooltip message (bootstrap 'alert' styling)</description>
+            <enumerationValues>
+                <enumerationValue key="none">None</enumerationValue>
+                <enumerationValue key="hint__info">Info</enumerationValue>
+                <enumerationValue key="hint__warning">Warning</enumerationValue>
+                <enumerationValue key="hint__error">Danger</enumerationValue>
+                <enumerationValue key="hint__success">Success</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="tooltipSize" type="enumeration" required="true" defaultValue="hint__medium">
+            <caption>Tooltip size</caption>
+            <category>Appearance</category>
+            <description>Size of the tooltip. The tooltip size will grow in height to fit your message</description>
+            <enumerationValues>
+                <enumerationValue key="hint__small">Small</enumerationValue>
+                <enumerationValue key="hint__medium">Medium</enumerationValue>
+                <enumerationValue key="hint__large">Large</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="tooltipShow" type="boolean" required="true" defaultValue="false">
+            <caption>Always show?</caption>
+            <category>Appearance</category>
+            <description>Always show the tooltip?</description>
+        </property>
+        <property key="tooltipEdges" type="boolean" required="true" defaultValue="false">
+            <caption>Round edges?</caption>
+            <category>Appearance</category>
+            <description>Tooltip with rounded edges?</description>
+        </property>
+        <property key="tooltipAnimation" type="enumeration" required="true" defaultValue="hint__normal">
+            <caption>Tooltip animation</caption>
+            <category>Appearance</category>
+            <description>Animation of the tooltip. Normal is a </description>
+            <enumerationValues>
+                <enumerationValue key="hint__no_animate">None</enumerationValue>
+                <enumerationValue key="hint__normal">Normal</enumerationValue>
+                <enumerationValue key="hint__bounce">Bounce</enumerationValue>
+            </enumerationValues>
+        </property>
+    </properties>
+</widget>
+
