@@ -16,7 +16,7 @@
             <category>Data</category>
             <description>The message to show in the tooltip. Used if no DataSource is selected</description>
         </property>
-        <property key="tooltipDataSource" type="microflow" required="false" defaultValue="">
+        <property key="tooltipDataSource" multiline="true" type="microflow" required="false" defaultValue="">
             <caption>Tooltip source</caption>
             <category>Data</category>
             <description>Microflow which will return a message as String</description>
